@@ -1,0 +1,39 @@
+%===Depending on doc class this will make headers l1 on new page (chapters)
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+%====
+
+%==== Fixes the captions on figs from Markdown
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+
+%==== Add a header/footer (empty) with lines
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{M30226}
+\fancyhead[RE,LO]{Internet of Things (IoT)}
+%\fancyfoot[CE,CO]{} % \leftmark}
+\fancyfoot[LE,RO]{\thepage}
+%=== Here are the lines
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+
+%fenced code
+%http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/fvextra/fvextra.pdf
+\usepackage{fvextra}
+%Default pandoc is verbatim unless --listings
+%numbers=left
+\renewenvironment{verbatim}{%
+  \VerbatimEnvironment
+ \begin{Verbatim}[breaklines=true,numbers=left,breakanywhere,breakafter=-/\\]%
+}{%
+  \end{Verbatim}%
+}

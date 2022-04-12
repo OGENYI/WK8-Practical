@@ -1,0 +1,9 @@
+name: Pandoc
+
+on:
+  #DO NOT CHANGE
+  workflow_dispatch:
+
+jobs:
+  Pandoc-Reusable:
+    uses: InternetOfThings2021/.github/.github/workflows/Pandoc.yml@main

@@ -1,0 +1,14 @@
+name: CheckForUpdates
+
+on:
+  #DO NOT CHANGE
+  workflow_dispatch:
+
+jobs:
+  CheckForUpdates-Reusable:
+    uses: InternetOfThings2021/.github/.github/workflows/CheckForUpdates.yml@main
+    with:
+      templateRepo: InternetOfThings2021/CW-Template
+    secrets:
+       PAT_RO: ${{ secrets.PAT_RO }}
+

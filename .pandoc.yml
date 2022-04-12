@@ -1,0 +1,31 @@
+# This is a yaml file -- be careful when editing
+# Stick to the formatting
+# List the markdown files you want to build into a pdf
+# List them in ORDER
+# One file per line
+to: latex
+
+include-in-header: .Ossonts/latexHeader.tex
+variables:
+  documentclass: article
+  geometry: a4paper,margin=2cm
+  linkcolor: blue
+
+
+from: markdown
+output-file: Submit/IoT.pdf # Do not change the filename
+
+pdf-engine: xelatex
+resource-path:
+           - .
+           - images
+#https://pandoc.org/MANUAL.html#option--resource-path
+
+# This is a list of files that will be used to build the PDF
+# Files MUST contain Markdown
+# Order is important
+input-files:
+- LabNotes.md
+#  You will want to remove the README file
+- README.md
+# Files relating to the assessment
