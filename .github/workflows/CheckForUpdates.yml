@@ -8,7 +8,7 @@ jobs:
   CheckForUpdates-Reusable:
     uses: InternetOfThings2021/.github/.github/workflows/CheckForUpdates.yml@main
     with:
-      templateRepo: InternetOfThings2021/CW-Template
+      templateRepo: InternetOfThings2021/Lab9-Template
     secrets:
        PAT_RO: ${{ secrets.PAT_RO }}
 
