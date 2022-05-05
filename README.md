@@ -1,5 +1,6 @@
 <!-- Updates to this file will be overwritten -->
 <!-- markdown-link-check-disable -->
+
 |  School of Computing |  |
 | --------------- | --------------- |
 | Title | Internet of Things |
@@ -9,28 +10,14 @@
 | Moodle | [https://moodle.port.ac.uk/course/view.php?id=15563](https://moodle.port.ac.uk/course/view.php?id=15563) |
 
 <!-- markdown-link-check-enable -->
-## **Internet of Things**
+## Internet of Things
 
-Schedule and Deliverables
+Learning objectives:
+<!-- TODO -->
 
-| Item | Value | Format | Outcomes | Deadline |
-| --- | --- | --- | --- | --- |
-| CW | 100% of CW | 2500 word PDF; Source Repo; Video | % |  13 May 2022, 23:00 |
+* MQTT
 
-## Marking Scheme
-
-|Mark | Section|
-|--|-----|
-| 15% | Introduction |
-| 35% | Details of the design |
-| 15% | Discussion |
-| 30% | Implementation of your design (Advanced) |
-| 5% | References |
-| **100%** |Total |
-
-> Limit:  2500 words
-
-## Notes and Advice
+### Notes and Advice
 
 <!-- markdown-link-check-disable -->
 * The [Extenuating Circumstances procedure](https://www.upsu.net/advice) is
@@ -53,133 +40,250 @@ Schedule and Deliverables
   support ana.baker@port.ac.uk and xia.han@port.ac.uk or your lecturers.
 <!-- markdown-link-check-enable-->
 
-## How to submit
+### Lab Notes
 
-This repository is your own private repository and all content must be submitted in this repository. This repository is closed at the deadline and **only** the content in this repository is marked:
+* Feel free to add any notes to the `LabNotes.md` file in this repo. (The Pandoc worker will convert these to a PDF if you need)
+* You can remove the `README.md` line from the `Pandoc.yml` file if you only want your notes in the PDF
 
-* The video file must be saved in the `Submit` folder
-* All source code must be saved in the `src` folder
-* The PDF must be saved in the `Submit` folder
-  * It is recommended you use the `.pandoc.yml` with Markdown and the `Pandoc` workflow to build your PDF. (Strongly advised)
-  * You can submit a custom PDF in the `Submit` folder if you wish. Name this file using your **Student ID** (Not recommended)
+### Lab 9.1 MQTT Client
 
-## Internet of Things Coursework
+* Be sure you understand what MQTT is and how it operates.
+* Install an MQTT client, this will help with debugging.
 
-The goal of this coursework is to apply your knowledge and practical skills to design and build an IoT application.
+You can use any client your want, MQTT Explorer is a good option. You will need to be able to subscribe to an MQTT topic so you can see any messages that get sent from your device or from the broker.
 
-The deliverables of the coursework consist two artifacts:
+* [https://mqtt-explorer.com/](https://mqtt-explorer.com/)
+* [https://github.com/emqx/MQTTX](https://github.com/emqx/MQTTX)
 
-1. A final report that details the design **(70%)**
-2. A demo of your application (a video recording) along with implementation GitHub code repository **(30%)**
+### Lab 9.1 Register for AdaFruit
 
-Your final report should address but is not limited to the following parts regarding your design:
+The bespoke platform of https://io.adafruit.com/ has a
+user-friendly dashboard will be adopted as the broker for this lab.
 
-* Introduction: Define the application scenario and the problem, justify why an IoT
-solution is needed, propose your design and the main functionality, decompose
-the design into smaller tasks, and give a basic outline of what you propose to
-implement. The main tasks and the logic flow should be well justified.
-* Details of the design: Include any tools, sensors, modules, protocols, platforms,
-pseudo code, and diagrams -- anything that is necessary to clearly explain your
-IoT system/steps. You are expected to go further beyond what you have been
-provided with for your practical exercises. You need to compare the useful
-components/sensors/modules before you adopt any of them for your design.
-Browse the Internet, look for more sensors, identify their operating/working
-conditions (e.g. power supply), and include them in your design. Describe the
-communication protocols and application protocols that you will use with
-detailed data flow and pseudo code. Even though some sensors/functions will
-not be implemented due to the limited resources, a consistent representation of
-them in data flow and pseudo code is expected across all stages. If you are
-considering using a commercial platform as a public broker/server, name the
-one you want to use and provide evidence of testing the platform. Besides, the
-technical issues, the cost of your design should be quantitatively evaluated.
-**Justify all your choices for this part.**
-* Discussion: Summarize the main insights into your design and map your
-solutions to the defined scenario and problems. Discuss the potential pitfalls,
-advantages and disadvantages of your design and how your design could be
-improved.
+There are other
+brokers like https://iot.eclipse.org/getting-started/.
 
-**Identify clearly which part you are going to implement as a tangible output and why the rest are not implemented.**
+Register an account with adafruit.com if you do not already have one.
 
-The implementation could implement only a part of your design. It is acceptable for
-you to have a sophisticated design but without an implementation of the entire
-design due to the limits on available tools or resources. Basic requirements for your
-implementation include:
+![Reg](images/Register.png)
 
-* The system functions without errors,
-* Hardware components are well connected,
-* The design/function logic is clear,
-* The demo is self-explanatory and the code is clearly **commented**
+> Refer to this documentation on the adafruit capabilities. [https://io.adafruit.com/api/docs](https://io.adafruit.com/api/docs)
 
-## Grading
+### Lab 9.2 Create a feed
 
-Grading will be based on the quality of the design (for example: originality, thoroughness, extent
-of analysis, justification), the clarity of the written report, and the
-implementation quality based on the demo and code. Ideally, you are encouraged to
-try something novel or apply ideas out of our workshops to the given problems. You
-can get a good grade for the design even if your innovative ideas do not work out
-well, as long as your final report shows evidence of extensive analysis and
-exploration, provides sound justification for your choices of modules / sensors /
-methods / platforms, and provide thoughtful reviews / reflections / comparisons on
-the existing solutions. For the implementation, you are asked to explain the code
-and logic in your demo.
+Create a new feed, give it a name and note down the MQTT topic name
 
+![name](images/FeedName.png)
 
-### Originality check
+### Lab 9.3 New dashboard
 
-The design and implementation should be done all by yourself independently.
+Create a new dashboard that will be used to store your blocks (Things you can visualise)
 
-**Your marks will be capped if the implementation has been proved to have not been done on your own.**
+![New](images/NewDashboard.png)
 
-### The marking criteria below apply for both the design and implementation
+### Lab 9.4 Add a new block
 
-* Introduction **15%**
+Add a new block to the dashboard, use a toggle button. Be sure to read/look at all the different types of blocks that you can add to a dashboard.
 
-  * Understanding of your application scenario and problem
-  * Justification of the need of an IoT solution to your problem
-  * Provide the motivation of your design and justification
-  * Design decomposition into subsystems/submodules
-  * Include your innovative thinking
+![block](images/NewBlock.png)
 
-* Details of the design **35%**
+### Lab 9.5 Connect using the desktop client
 
-  * Clear description of the chosen solutions/tools for each
-    subsystem/submodule
-  * Justification behind the chosen solutions/tools that they
-    are the most appropriate choice to the given scenario
-  * Comparison with different modules/sensors/protocols that
-    you may choose as alternatives
-  * Clear reference of the tools/sensors, modules, protocols,
-    platforms (where you found them)
-  * Use pseudo code or code with syntax to demonstrate the
-    functions in each subsystem/submodule (applicable to all
-    subsystems/submodules including the ones not to be
-    implemented)
-  * Use flowchart/diagram to intuitively demonstrate the logic,
-    data flow (control command + actuator signals) of your
-    finalized design
-  * The working conditions of your design
-  * The design is both innovative and practical
-  * Cost estimation of your design/implementation
+To be sure your credentials are correct, get your key and connect your MQTT client.
 
-* Discussion **15%**
+* Get your keys, do not share your keys.
 
-  * Summary of your design
-  * Map your solutions to the given scenario and problem
-  * Potential pitfalls, advantages, disadvantages
-  * Alternative solutions and suggestions
-  * Future work/direction to improve the current solutions
+    s![key](images/NewKey.png)
 
-* Implementation of your design (Advanced) **30%**
+* Connect the client
 
-  * Implement the whole design or part of your design
-  * The implementation is functioning well without errors
-  * The hardware components are well connected without obvious pitfalls
-  * The logic in your functions is clear during the demo
-  * The code can be well explained by you in the demo
-  * The implementation is not trivial or singly run on the code
-  * given to you in previous practicals
-  * The innovative part of the implementation including, but not limited to data fusion, human factor, user interface.
+    ![client](images/mqttexplorer.png)
 
-* References **5%**
- 
-  * Including conference papers, journal papers, and URLs for any external code or data used.
+* Change the toggle button on your dashboard, it should result in a message being sent to your client. Then sent a message from your client to adafruit. Do not proceed until you have established this two way communication.
+
+    ![msg](images/connected.png)
+
+### Lab 9.6 Libraries
+
+Connect your ESP-01 to your arduino and import these libraries (install if needed)
+
+```c
+#include <WiFiEsp.h>
+#include <WiFiEspClient.h>
+#include <SoftwareSerial.h>
+#include <PubSubClient.h>
+```
+
+You will need to setup an access point and connect your ESP-01 to your WiFi. (A wifi connection is required). Define some constants, a server, port and your credentials.
+
+```c
+#define MQTT_SERVER  "io.adafruit.com"
+#define IO_USERNAME  "USERNAME_HERE"
+#define IO_KEY       "aio_SECRETKEYEkuK"
+#define MQTT_PORT 1883
+```
+
+Create an MQTT client object
+
+```c
+WiFiEspClient WiFiClient;//WiFi
+PubSubClient client(MQTT_SERVER, MQTT_PORT, WiFiClient); //MQTT Client
+```
+
+### Lab 9.7 Setup function
+
+In your setup function you will need to:
+
+* Setup the serial connections
+* Connect to your WiFi
+* Set a callback
+
+A callback is a function that will be called when data is received from the broker.(Use an empty function for now)
+
+```c
+void callback(char* topic, byte* payload, unsigned int length) {
+  //EMPTY
+}
+
+void setup()
+{
+  // initialize serial for debugging
+  Serial.begin(9600);
+  // initialize serial for ESP module
+  Serial1.begin(9600);
+  // initialize ESP module
+  WiFi.init(&Serial1);
+
+  // check for the presence of the shield
+  if (WiFi.status() == WL_NO_SHIELD) {
+    Serial.println("WiFi shield not present");
+    // don't continue
+    while (true);
+  }
+
+  // attempt to connect to WiFi network
+  while ( status != WL_CONNECTED) {
+    Serial.print("Attempting to connect to WPA SSID: ");
+    Serial.println(ssid);
+    // Connect to WPA/WPA2 network
+    status = WiFi.begin(ssid, pass);
+  }
+
+  // you're connected now, so print out the data
+  Serial.println("You're connected to the network");
+
+  printWifiStatus();
+
+  client.setCallback(callback);
+}
+```
+
+Check this builds
+
+### Lab9.10 Main loop
+
+Now define a main loop, this will check to see if the broker is connected, and if not run a connection function, else it will call the client loop (MQTT main code)
+
+```c
+
+void reconnect() {
+  //TODO: add some code
+}
+
+void loop()
+{
+
+  if (!client.connected()) {
+    reconnect();
+  }
+  client.loop();
+
+}
+```
+
+### Lab 9.11 Connect
+
+Now lets write the connection code, this will be run every time the main loop detects that a connection has not already been established. We will connect to the `led` topic and send the value `off`. Then we will subscribe to the topic so that we get notifications if there is any new data on this topic (e.g. press button on dashboard, or send data via MQTT client)
+
+* Set your topic feed names correctly.
+* If we fail to connect, wait a bit and then retry.
+
+```c
+
+void reconnect() {
+  // Loop until we're reconnected
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    // Attempt to connect
+    if (client.connect("arduinoClient",IO_USERNAME,IO_KEY)) {
+      Serial.println("connected");
+      // Once connected, publish an announcement...
+      client.publish("ossonts/feeds/iotled","OFF");
+      // ... and resubscribe
+      client.subscribe("ossonts/feeds/iotled");
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+
+  }
+}
+```
+
+Run this code. When this starts it will turn your topic to `OFF` be sure that you can see this value change on your dashboard and in the MQTT client (Set it to `ON` and then reboot arduino). Do not proceed until you can see these messages.
+
+### Lab 9.12 React to data
+
+Now lets get the callback to log any data we receive. Remember there are data limits, so dont send data too fast.
+
+```c
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Message arrived [");
+  Serial.print(topic);
+  Serial.print("] ");
+  //One way to access the payload message
+  for (int i=0;i<length;i++) {
+    Serial.print((char)payload[i]);
+  }
+}
+  ```
+
+Ensure this function is triggered when your toggle the button on your dashboard / or in the MQTT client.
+
+Imagine that your arduino has a sense of humour. Every time your turn the button `ON` the arduino should turn it `OFF`.
+
+* Be sure to set the correct topic
+* Check you can see the messages in your MQTT Client
+
+```c
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Message arrived [");
+  Serial.print(topic);
+  Serial.print("] ");
+  //One way to access the payload message
+  for (int i=0;i<length;i++) {
+    Serial.print((char)payload[i]);
+  }
+  //Another way to get the payload message
+  payload[length] = '\0';
+  char* msg = (char*)payload;
+  Serial.print("===\n");
+  Serial.print(msg);
+  Serial.print("===\n");
+
+  //Strings can be tricky, so use the string compare function
+  if(strcmp(msg,"ON")==0){
+    client.publish("ossonts/feeds/iotled","OFF");
+    delay(5000);
+
+  }
+}
+```
+
+### Lab 9.13
+
+1. Connect an LED to your arduino. Now use the button on adafruit to turn the LED on and off.
+2. (Optional) Can you send temperature values and draw a graph?
