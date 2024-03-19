@@ -60,8 +60,9 @@ You can use any client your want, MQTT Explorer is a good option. You will need 
 The bespoke platform of https://io.adafruit.com/ has a
 user-friendly dashboard will be adopted as the broker for this lab.
 
-There are other
+There are others
 brokers like https://iot.eclipse.org/getting-started/.
+
 
 Register an account with adafruit.com if you do not already have one.
 
@@ -91,11 +92,11 @@ Add a new block to the dashboard, use a toggle button. Be sure to read/look at a
 
 To be sure your credentials are correct, get your key and connect your MQTT client.
 
-* Get your keys, do not share your keys.
+* Get your keys, do not share your keys. You can do this by clicking on the key symbol. 
 
     s![key](images/NewKey.png)
 
-* Connect the client
+* Connect the client- Note the password refers to the key you generated from adafruit and not your login password. Username remains the same. 
 
     ![client](images/mqttexplorer.png)
 
