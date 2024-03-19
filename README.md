@@ -45,7 +45,7 @@ Learning objectives:
 * Feel free to add any notes to the `LabNotes.md` file in this repo. (The Pandoc worker will convert these to a PDF if you need)
 * You can remove the `README.md` line from the `Pandoc.yml` file if you only want your notes in the PDF
 
-### Lab 9.1 MQTT Client
+### Lab 8.1 MQTT Client
 
 * Be sure you understand what MQTT is and how it operates.
 * Install an MQTT client, this will help with debugging.
@@ -55,7 +55,7 @@ You can use any client your want, MQTT Explorer is a good option. You will need 
 * [https://mqtt-explorer.com/](https://mqtt-explorer.com/)
 * [https://github.com/emqx/MQTTX](https://github.com/emqx/MQTTX)
 
-### Lab 9.1 Register for AdaFruit
+### Lab 8.1 Register for AdaFruit
 
 The bespoke platform of https://io.adafruit.com/ has a
 user-friendly dashboard will be adopted as the broker for this lab.
@@ -69,25 +69,25 @@ Register an account with adafruit.com if you do not already have one.
 
 > Refer to this documentation on the adafruit capabilities. [https://io.adafruit.com/api/docs](https://io.adafruit.com/api/docs)
 
-### Lab 9.2 Create a feed
+### Lab 8.2 Create a feed
 
 Create a new feed, give it a name and note down the MQTT topic name
 
 ![name](images/FeedName.png)
 
-### Lab 9.3 New dashboard
+### Lab 8.3 New dashboard
 
 Create a new dashboard that will be used to store your blocks (Things you can visualise)
 
 ![New](images/NewDashboard.png)
 
-### Lab 9.4 Add a new block
+### Lab 8.4 Add a new block
 
 Add a new block to the dashboard, use a toggle button. Be sure to read/look at all the different types of blocks that you can add to a dashboard.
 
 ![block](images/NewBlock.png)
 
-### Lab 9.5 Connect using the desktop client
+### Lab 8.5 Connect using the desktop client
 
 To be sure your credentials are correct, get your key and connect your MQTT client.
 
@@ -103,7 +103,7 @@ To be sure your credentials are correct, get your key and connect your MQTT clie
 
     ![msg](images/connected.png)
 
-### Lab 9.6 Libraries
+### Lab 8.6 Libraries
 
 Connect your ESP-01 to your arduino and import these libraries (install if needed)
 
@@ -130,7 +130,7 @@ WiFiEspClient WiFiClient;//WiFi
 PubSubClient client(MQTT_SERVER, MQTT_PORT, WiFiClient); //MQTT Client
 ```
 
-### Lab 9.7 Setup function
+### Lab 8.7 Setup function
 
 In your setup function you will need to:
 
@@ -180,7 +180,7 @@ void setup()
 
 Check this builds
 
-### Lab9.10 Main loop
+### Lab8.10 Main loop
 
 Now define a main loop, this will check to see if the broker is connected, and if not run a connection function, else it will call the client loop (MQTT main code)
 
@@ -201,7 +201,7 @@ void loop()
 }
 ```
 
-### Lab 9.11 Connect
+### Lab 8.11 Connect
 
 Now lets write the connection code, this will be run every time the main loop detects that a connection has not already been established. We will connect to the `led` topic and send the value `off`. Then we will subscribe to the topic so that we get notifications if there is any new data on this topic (e.g. press button on dashboard, or send data via MQTT client)
 
@@ -235,7 +235,7 @@ void reconnect() {
 
 Run this code. When this starts it will turn your topic to `OFF` be sure that you can see this value change on your dashboard and in the MQTT client (Set it to `ON` and then reboot arduino). Do not proceed until you can see these messages.
 
-### Lab 9.12 React to data
+### Lab 8.12 React to data
 
 Now lets get the callback to log any data we receive. Remember there are data limits, so dont send data too fast.
 
@@ -283,7 +283,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 }
 ```
 
-### Lab 9.13
+### Lab 8.13
 
 1. Connect an LED to your arduino. Now use the button on adafruit to turn the LED on and off.
 2. (Optional) Can you send temperature values and draw a graph?
