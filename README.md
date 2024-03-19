@@ -101,6 +101,7 @@ To be sure your credentials are correct, get your key and connect your MQTT clie
     ![client](images/mqttexplorer.png)
 
 * Change the toggle button on your dashboard, it should result in a message being sent to your client. Then sent a message from your client to adafruit. Do not proceed until you have established this two way communication.
+* Note that the topic name must be all lower case. 
 
     ![msg](images/connected.png)
 
