@@ -167,11 +167,11 @@ void setup()
   }
 
   // attempt to connect to WiFi network
-  while ( status != WL_CONNECTED) {
-    Serial.print("Attempting to connect to WPA SSID: ");
-    Serial.println(ssid);
-    // Connect to WPA/WPA2 network
-    status = WiFi.begin(ssid, pass);
+  WiFi.begin(ssid, pass);  // Start the connection attempt
+  while (WiFi.status() != WL_CONNECTED) {
+      Serial.print("Attempting to connect to WPA SSID: ");
+      Serial.println(ssid);
+      delay(1000);  // Wait for 1 second before checking the connection status again
   }
 
   // you're connected now, so print out the data
