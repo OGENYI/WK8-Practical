@@ -177,7 +177,7 @@ void setup()
   // you're connected now, so print out the data
   Serial.println("You're connected to the network");
 
-  printWifiStatus();
+  //printWifiStatus();
 
   client.setCallback(callback);
 }
